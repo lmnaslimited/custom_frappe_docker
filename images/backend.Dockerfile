@@ -7,6 +7,7 @@ COPY repos ../apps
 
 USER root
 
-RUN install-app hrms
+RUN install-app hrms && \
+    install-app lms
 
 USER frappe
