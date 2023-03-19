@@ -6,7 +6,11 @@
   {
     "url": "https://github.com/frappe/payments.git",
     "branch": "develop"
-  }, 
+  },
+  {
+    "url": "https://github.com/frappe/education.git",
+    "branch": "develop"
+  },
   {
     "url": "https://github.com/frappe/hrms.git",
     "branch": "version-14"
