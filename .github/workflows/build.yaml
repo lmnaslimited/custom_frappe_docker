@@ -3,7 +3,7 @@ name: Build Image
 on:
   push:
     branches:
-      - lenscx
+      - lenscx-ind
 
   workflow_dispatch:
     inputs:

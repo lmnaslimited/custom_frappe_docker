@@ -6,7 +6,9 @@
   {
     "url": "https://github.com/frappe/payments.git",
     "branch": "version-14"
+  },
+  {
+    "url": "https://github.com/resilient-tech/india-compliance.git",
+    "branch": "14.7.0"
   }
-  
-  
 ]
