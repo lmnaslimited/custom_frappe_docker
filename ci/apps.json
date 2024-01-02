@@ -12,6 +12,10 @@
     "branch": "v14.3.1"
   },
   {
+    "url": "https://github.com/frappe/education.git",
+    "branch": "v15.0.0"
+  },
+  {
     "url": "https://github.com/frappe/lms.git",
     "branch": "v1.0.0"
   },
