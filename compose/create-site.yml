@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   configurator:
-    image: frappe/erpnext:${VERSION:?No image version set}
+    image: ghcr.io/lmnaslimited/lensdocker/${IMAGE:?No IMAGE name set}:${VERSION:?No image VERSION set}
     volumes:
       - sites:/home/frappe/frappe-bench/sites
     command:
@@ -10,9 +10,9 @@ services:
       - new-site
       - --no-mariadb-socket
       - --install-app=erpnext
-      - --db-root-password=admin
-      - --admin-password=admin
-      - erp.example.com
+      - --db-root-password=${DB_PASSWORD:?No DB_PASSWORD set}
+      - --admin-password=${ADMIN_PASSWORD:?No ADMIN_PASSWORD set}
+      - ${SITE_NAME:?No SITE_NAME set}
     deploy:
       restart_policy:
         condition: none
@@ -24,12 +24,14 @@ volumes:
   sites:
     external: true
     # set to name of the sites volume
-    name: ${BENCH_NAME:-erpnext}_sites
+    name: ${BENCH_NAME:?No BENCH_NAME set}_sites
 
 networks:
   bench-network:
-    name: ${BENCH_NAME:-erpnext}
+    name: ${BENCH_NAME:?No BENCH_NAME set}
     external: true
   mariadb-network:
-    name: mariadb-network
+    name: ${MARIADB_NETWORK}-network
     external: true
+
+# Note: set IMAGE, VERSION, DB_PASSWORD, ADMIN_PASSWORD, MARIADB_NETWORK, BENCH_NAME and SITE

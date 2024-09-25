@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   configurator:
-    image: frappe/erpnext:${VERSION:?No image version set}
+    image: ghcr.io/lmnaslimited/lensdocker/${IMAGE:?No IMAGE name set}:${VERSION:?No image VERSION set}
     volumes:
       - sites:/home/frappe/frappe-bench/sites
     entrypoint: ["bash", "-c"]
@@ -18,7 +18,7 @@ services:
       restart_policy:
         condition: none
     environment:
-      DB_HOST: mariadb_db
+      DB_HOST: ${DATABASE_HOST:?No DATABASE_HOST set}_db
       DB_PORT: 3306
       REDIS_CACHE: redis-cache:6379
       REDIS_QUEUE: redis-queue:6379
@@ -29,4 +29,7 @@ volumes:
   sites:
     external: true
     # set to name of the sites volume
-    name: ${BENCH_NAME:-erpnext}_sites
+    name: ${BENCH_NAME:?No BENCH_NAME set}_sites
+
+
+# Note: set IMAGE, VERSION, BENCH_NAME and DATABASE_HOST

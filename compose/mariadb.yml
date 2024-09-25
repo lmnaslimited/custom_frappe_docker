@@ -4,7 +4,7 @@ services:
   db:
     image: mariadb:10.6
     healthcheck:
-      test: mysqladmin ping -h localhost --password=${DB_PASSWORD:-admin}
+      test: mysqladmin ping -h localhost --password=${DB_PASSWORD:?No DB_PASSWORD set}
       interval: 1s
       retries: 15
     command:
@@ -13,7 +13,7 @@ services:
       - --skip-character-set-client-handshake
       - --skip-innodb-read-only-compressed
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-admin}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db-data:/var/lib/mysql
     networks:
@@ -24,5 +24,7 @@ volumes:
 
 networks:
   mariadb-network:
-    name: mariadb-network
+    name: ${MARIADB_NETWORK}-network
     attachable: true
+
+# Note: set MARIADB_NETWORK and DB_PASSWORD
