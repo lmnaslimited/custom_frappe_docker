@@ -3,7 +3,7 @@ name: Build Image
 on:
   push:
     branches:
-      - main
+      - lens-iyakkam
 
   workflow_dispatch:
     inputs:
