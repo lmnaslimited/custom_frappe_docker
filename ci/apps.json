@@ -1,11 +1,11 @@
 [
   {
     "url": "https://github.com/frappe/erpnext.git",
-    "branch": "v14.44.0"
+    "branch": "v15.26.1"
   },
   {
     "url": "https://github.com/frappe/payments.git",
-    "branch": "version-14"
+    "branch": "version-15"
   },
   {
     "url": "https://github.com/lmnaslimited/lens_pdf-on-submit.git",
