@@ -9,7 +9,7 @@
   }, 
   {
     "url": "https://github.com/frappe/hrms.git",
-    "branch": "v15.27.2"
+    "branch": "v15.25.1"
   },
   {
     "url": "https://github.com/frappe/lms.git",
@@ -17,6 +17,6 @@
   },
   {
     "url": "https://github.com/resilient-tech/india-compliance.git",
-    "branch": "v15.8.1"
+    "branch": "v15.12.0"
   }
 ]
